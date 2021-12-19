@@ -1,11 +1,11 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:635719328626:task-definition/factorial:1",
+    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:635719328626:task-definition/factorial:4",
     "containerDefinitions": [
         {
             "name": "factorial",
-            "image": "635719328626.dkr.ecr.eu-central-1.amazonaws.com/factorial",
+            "image": "https://635719328626.dkr.ecr.eu-central-1.amazonaws.com/factorial:1.0.1",
             "cpu": 0,
-            "memoryReservation": 500,
+            "memoryReservation": 256,
             "portMappings": [
                 {
                     "containerPort": 5000,
@@ -16,45 +16,22 @@
             "essential": true,
             "environment": [],
             "mountPoints": [],
-            "volumesFrom": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "/ecs/factorial",
-                    "awslogs-region": "eu-central-1",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            }
+            "volumesFrom": []
         }
     ],
     "family": "factorial",
     "taskRoleArn": "arn:aws:iam::635719328626:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::635719328626:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 4,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -65,17 +42,13 @@
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EC2",
-        "FARGATE"
+        "EC2"
     ],
-    "runtimePlatform": {
-        "operatingSystemFamily": "LINUX"
-    },
     "requiresCompatibilities": [
-        "FARGATE"
+        "EC2"
     ],
-    "cpu": "256",
-    "memory": "1024",
-    "registeredAt": "2021-12-18T18:16:37.941000+03:00",
+    "cpu": "128",
+    "memory": "256",
+    "registeredAt": "2021-12-19T15:08:22.376000+03:00",
     "registeredBy": "arn:aws:iam::635719328626:root"
 }
